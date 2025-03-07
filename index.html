@@ -25,13 +25,19 @@
     </style>
 </head>
 <body>
-    <h2>Calculadora de Suma</h2>
+    <h2>Calculadora</h2>
     <form id="sumForm">
         <input type="number" id="num1" placeholder="Número 1" required>
-        +
+        <select id="operacion">
+            <option value="sumar">+</option>
+            <option value="restar">-</option>
+            <option value="multiplicar">x</option>
+            <option value="dividir">÷</option>
+        </select>
         <input type="number" id="num2" placeholder="Número 2" required>
-        <button type="submit">Sumar</button>
+        <button type="submit">Calcular</button>
     </form>
+    
     <h3>Resultado: <span id="resultado">0</span></h3>
 
     <script src="functions-calculator.js"></script>
