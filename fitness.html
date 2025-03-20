@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de IMC y Calorías Diarias</title>
+    <title>Salud y fitness</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -43,7 +43,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <!-- Calculadora IMC -->
-            <div class="col-md-5 mb-4">
+            <div class="col-md-4 mb-4">
                 <div class="calculadora text-center">
                     <h2 class="mb-3">Calculadora de IMC</h2>
                     <form id="imcForm" class="mb-3">
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Calculadora de Calorías Diarias -->
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class="calculadora text-center">
                     <h2 class="mb-3">Calculadora de Calorías Diarias</h2>
                     <form id="caloriasForm" class="mb-3">
@@ -80,6 +80,19 @@
                         <button type="submit" class="btn btn-light btn-sm">Calcular</button>
                     </form>
                     <h3>Calorías diarias: <span id="caloriasResultado">0</span></h3>
+                </div>
+            </div>
+
+            <!-- Calculadora de Ritmo Cardíaco Ideal -->
+            <div class="col-md-4">
+                <div class="calculadora text-center">
+                    <h2 class="mb-3">Ritmo Cardíaco Ideal</h2>
+                    <form id="ritmoCardiacoForm" class="mb-3">
+                        <input type="number" id="edadRitmo" class="form-control form-control-sm mb-2" placeholder="Edad (años)" required>
+                        <button type="submit" class="btn btn-light btn-sm">Calcular</button>
+                    </form>
+                    <h3>Frecuencia Máxima: <span id="frecuenciaMaxima">0</span> bpm</h3>
+                    <h4>Rango Ideal: <span id="ritmoMin">0</span> - <span id="ritmoMax">0</span> bpm</h4>
                 </div>
             </div>
         </div>

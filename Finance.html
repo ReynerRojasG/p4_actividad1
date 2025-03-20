@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Básica</title>
+    <title>Finanzas y economía</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -11,18 +11,26 @@
             color: #ffffff;
         }
         .calculadora {
-            width: 320px; 
+            width: 320px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            background-color: #2c2c2c; 
+            background-color: #3C3D37;
+            color: white;
         }
-
         .btn-regresar {
             position: absolute;
             top: 15px;
             left: 15px;
+        }
+        .btn-regresar:hover {
+            background-color: #5a6555;
+        }
+        .form-control {
+            background-color: #2c2c2c;
+            color: white;
+            border: 1px solid #697565;
         }
     </style>
 </head>
@@ -30,5 +38,65 @@
     
     <a href="index.html" class="btn btn-outline-light btn-sm btn-regresar">← Regresar</a>
 
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Calculadora de Interés Compuesto -->
+            <div class="col-md-4 mb-4">
+                <div class="calculadora text-center">
+                    <h2 class="mb-3">Interés Compuesto</h2>
+                    <form id="interesForm" class="mb-3">
+                        <input type="number" id="capital" class="form-control form-control-sm mb-2" placeholder="Capital inicial ($)" required>
+                        <input type="number" id="tasa" class="form-control form-control-sm mb-2" placeholder="Tasa de interés (%)" required>
+                        <input type="number" id="tiempo" class="form-control form-control-sm mb-2" placeholder="Tiempo (años)" required>
+                        <select id="frecuencia" class="form-control form-control-sm mb-2">
+                            <option value="1">Anual</option>
+                            <option value="2">Semestral</option>
+                            <option value="4">Trimestral</option>
+                            <option value="12">Mensual</option>
+                        </select>
+                        <button type="submit" class="btn btn-light btn-sm">Calcular</button>
+                    </form>
+                    <h3>Resultado: $<span id="interesResultado">0</span></h3>
+                </div>
+            </div>
+
+            <!-- Calculadora de Préstamos e Hipotecas -->
+            <div class="col-md-4 mb-4">
+                <div class="calculadora text-center">
+                    <h2 class="mb-3">Préstamos e Hipotecas</h2>
+                    <form id="prestamoForm" class="mb-3">
+                        <input type="number" id="montoPrestamo" class="form-control form-control-sm mb-2" placeholder="Monto del préstamo ($)" required>
+                        <input type="number" id="tasaPrestamo" class="form-control form-control-sm mb-2" placeholder="Tasa de interés anual (%)" required>
+                        <input type="number" id="plazo" class="form-control form-control-sm mb-2" placeholder="Plazo (años)" required>
+                        <select id="frecuenciaPago" class="form-control form-control-sm mb-2">
+                            <option value="12">Mensual</option>
+                            <option value="4">Trimestral</option>
+                            <option value="2">Semestral</option>
+                            <option value="1">Anual</option>
+                        </select>
+                        <button type="submit" class="btn btn-light btn-sm">Calcular</button>
+                    </form>
+                    <h3>Pago Mensual: $<span id="pagoMensual">0</span></h3>
+                </div>
+            </div>
+
+            <!-- Calculadora de Ahorro e Inversión -->
+            <div class="col-md-4">
+                <div class="calculadora text-center">
+                    <h2 class="mb-3">Ahorro e Inversión</h2>
+                    <form id="ahorroForm" class="mb-3">
+                        <input type="number" id="ahorroInicial" class="form-control form-control-sm mb-2" placeholder="Ahorro inicial ($)" required>
+                        <input type="number" id="aporteMensual" class="form-control form-control-sm mb-2" placeholder="Aporte mensual ($)" required>
+                        <input type="number" id="tasaAhorro" class="form-control form-control-sm mb-2" placeholder="Tasa de interés (%)" required>
+                        <input type="number" id="tiempoAhorro" class="form-control form-control-sm mb-2" placeholder="Tiempo (años)" required>
+                        <button type="submit" class="btn btn-light btn-sm">Calcular</button>
+                    </form>
+                    <h3>Total Acumulado: $<span id="ahorroResultado">0</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="functions-calculator.js"></script>
 </body>
 </html>

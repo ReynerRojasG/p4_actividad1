@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Básica</title>
+    <title>Matematicas y ciencias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-         body {
+        body {
             background-color: #181C14;
             color: #ffffff;
         }
         .calculadora {
-            width: 320px; 
+            width: 320px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
@@ -35,37 +35,76 @@
             color: white;
             border: 1px solid #697565;
         }
-        .btn-light {
-            background-color: #697565;
-            border-color: #ffffff;
-            color: #ffffff;
-        }
-        .btn-light:hover {
-            background-color: #5a6555;
-        }
     </style>
 </head>
 <body class="d-flex flex-column align-items-center justify-content-center vh-100">
-    
     <a href="index.html" class="btn btn-outline-light btn-sm btn-regresar">← Regresar</a>
 
-    <div class="calculadora text-center">
-        <h2 class="mb-3">Calculadora Básica</h2>
-        <form id="sumForm" class="mb-3">
-            <input type="number" id="num1" class="form-control form-control-sm mb-2" placeholder="Número 1" required>
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Calculadora Básica -->
+            <div class="col-md-4 mb-4">
+                <div class="calculadora text-center">
+                    <h2 class="mb-3">Calculadora Básica</h2>
+                    <form id="sumForm" class="mb-3">
+                        <input type="number" id="num1" class="form-control form-control-sm mb-2" placeholder="Número 1" required>
+                        <select id="operacion" class="form-select form-select-sm mb-2">
+                            <option value="sumar">Sumar</option>
+                            <option value="restar">Restar</option>
+                            <option value="multiplicar">Multiplicar</option>
+                            <option value="dividir">Dividir</option>
+                        </select>
+                        <input type="number" id="num2" class="form-control form-control-sm mb-2" placeholder="Número 2" required>
+                        <button type="submit" class="btn btn-light btn-sm">Calcular</button>
+                    </form>
+                    <h3>Resultado: <span id="resultado">0</span></h3>
+                </div>
+            </div>
 
-            <select id="operacion" class="form-select form-select-sm mb-2">
-                <option value="sumar">Sumar</option>
-                <option value="restar">Restar</option>
-                <option value="multiplicar">Multiplicar</option>
-                <option value="dividir">Dividir</option>
-            </select>
+            <!-- Calculadora de Fracciones -->
+            <div class="col-md-4 mb-4">
+                <div class="calculadora text-center">
+                    <h2 class="mb-3">Calculadora de Fracciones</h2>
+                    <form id="fracForm" class="mb-3">
+                        <input type="number" id="num1Frac" class="form-control form-control-sm mb-2" placeholder="Numerador 1" required>
+                        <input type="number" id="den1Frac" class="form-control form-control-sm mb-2" placeholder="Denominador 1" required>
+                        <select id="fracOperacion" class="form-select form-select-sm mb-2">
+                            <option value="sumar">Sumar</option>
+                            <option value="restar">Restar</option>
+                            <option value="multiplicar">Multiplicar</option>
+                            <option value="dividir">Dividir</option>
+                        </select>
+                        <input type="number" id="num2Frac" class="form-control form-control-sm mb-2" placeholder="Numerador 2" required>
+                        <input type="number" id="den2Frac" class="form-control form-control-sm mb-2" placeholder="Denominador 2" required>
+                        <button type="submit" class="btn btn-light btn-sm">Calcular</button>
+                    </form>
+                    <h3>Resultado: <span id="fracResultado">0</span></h3>
+                </div>
+            </div>
 
-            <input type="number" id="num2" class="form-control form-control-sm mb-2" placeholder="Número 2" required>
+            <!-- Conversor de Unidades -->
+            <div class="col-md-4">
+                <div class="calculadora text-center">
+                    <h2 class="mb-3">Conversor de Unidades</h2>
+                    <form id="conversorForm" class="mb-3">
+                        <input type="number" id="valor" class="form-control form-control-sm mb-2" placeholder="Ingrese el valor" required>
+                        
+                        <select id="tipoConversion" class="form-select form-select-sm mb-2">
+                            <option value="longitud">Longitud</option>
+                            <option value="masa">Masa</option>
+                            <option value="volumen">Volumen</option>
+                            <option value="temperatura">Temperatura</option>
+                        </select>
 
-            <button type="submit" class="btn btn-light btn-sm">Calcular</button>
-        </form>
-        <h3>Resultado: <span id="resultado">0</span></h3>
+                        <select id="unidadDesde" class="form-select form-select-sm mb-2"></select>
+                        <select id="unidadHasta" class="form-select form-select-sm mb-2"></select>
+                        
+                        <button type="submit" class="btn btn-light btn-sm">Convertir</button>
+                    </form>
+                    <h3>Resultado: <span id="resultadoConversion">0</span></h3>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="functions-calculator.js"></script>
